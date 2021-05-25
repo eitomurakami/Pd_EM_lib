@@ -1,0 +1,31 @@
+#N canvas 41 203 628 404 12;
+#X obj 45 272 EM_clock 128 4;
+#X obj 140 242 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 45 309 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 140 309 5 0 0 0 - - -;
+#X obj 48 118 hsl 128 15 30 250 0 0 empty empty BPM -2 -8 0 10 -262144
+-1 -1 6500 1;
+#X obj 95 181 hsl 128 15 1 128 0 0 empty empty division -2 -8 0 10
+-262144 -1 -1 1600 1;
+#X floatatom 45 143 5 0 0 0 - - -;
+#X floatatom 92 206 5 0 0 0 - - -;
+#X text 21 362 Eito Murakami - EM_clock (05/22/21);
+#X text 64 307 <-bang;
+#X text 187 116 <-inlet1 & argument1: BPM (float \, 30-250);
+#X text 235 179 <-inlet2 & argument2: Clock Division (float \, 1-128)
+;
+#X text 169 240 <-inlet3: switch (float \, 0 or 1);
+#X text 183 309 <-interval (ms);
+#X text 40 21 EM_clock is a BPM clock generator with clock division.
+In addition to a series of bangs from the first outlet \, the second
+outlet ouputs the interval in milliseconds \, which can be used to
+convert BPM to time interval.;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 1 0 0 2;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 1;

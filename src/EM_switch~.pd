@@ -1,0 +1,15 @@
+#N canvas -11 -11 1920 970 12;
+#X obj 113 139 switch~;
+#X obj 42 42 inlet~;
+#X obj 42 76 outlet~;
+#X obj 113 41 inlet;
+#X obj 113 105 clip 0 1;
+#X obj 166 40 loadbang;
+#X obj 113 76 i \$1;
+#X text 154 75 <-argument1;
+#X text 31 190 Eito Murakami - EM_switch~ (05/22/21);
+#X connect 1 0 2 0;
+#X connect 3 0 6 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;

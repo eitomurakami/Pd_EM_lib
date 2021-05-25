@@ -1,0 +1,13 @@
+#N canvas 31 189 481 453 12;
+#X obj 45 164 EM_scope;
+#X text 38 408 Eito Murakami - EM_scope (05/22/21);
+#X obj 45 109 osc~ 220;
+#X text 112 109 <-inlet1: audio in;
+#X text 252 165 <-Turn On/Off DSP;
+#X text 253 356 <-change the table size;
+#X text 35 8 EM_scope is an oscilloscope GUI abstraction with a variable
+table size. The toggle button at the top-right corner turns on/off
+DSP inside the abstraction. The table size can be changed dynamically
+using the slider \, which consequently changes the resolution based
+on the sample rate.;
+#X connect 2 0 0 0;

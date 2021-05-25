@@ -1,0 +1,28 @@
+#N canvas 65 221 577 372 12;
+#X obj 38 91 hsl 128 15 0 127 0 0 empty empty input -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 35 268 EM_map 0 127 50 80;
+#X floatatom 35 297 5 0 0 0 - - -;
+#X msg 65 149 0;
+#X text 176 89 <-inlet1: input value (float);
+#X text 118 145 <-inlet2 & argument1: input minimum value (float);
+#X text 132 177 <-inlet3 & argument2: input maximum value (float);
+#X msg 127 207 127;
+#X msg 158 236 0;
+#X msg 96 178 127;
+#X text 169 206 <-inlet4 & argument3: output minimum value (float)
+;
+#X text 194 235 <-inlet5 & argument4: output maximum value (float)
+;
+#X text 36 332 Eito Murakami - EM_map (05/22/21);
+#X text 34 17 EM_map converts the range of the input value to another
+range. If imin < imax while omin > omax \, the output value decreases
+as the input value increases.;
+#X floatatom 35 116 5 0 0 0 - - -;
+#X connect 0 0 14 0;
+#X connect 1 0 2 0;
+#X connect 3 0 1 1;
+#X connect 7 0 1 3;
+#X connect 8 0 1 4;
+#X connect 9 0 1 2;
+#X connect 14 0 1 0;

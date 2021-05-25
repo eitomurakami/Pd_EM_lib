@@ -1,0 +1,40 @@
+#N canvas 58 196 692 485 12;
+#X obj 37 378 *~;
+#X obj 68 413 dac~;
+#X msg 538 378 \; pd dsp 1;
+#X obj 538 345 loadbang;
+#X obj 193 313 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 190 333 lop~ 100;
+#X obj 125 378 *~;
+#X text 28 441 Eito Murakami - EM_width~ (05/22/21);
+#X obj 37 106 noise~;
+#X obj 81 160 noise~;
+#X text 89 106 <-inlet1: audio left in;
+#X text 132 161 <-inlet1: audio right in;
+#X obj 128 226 hsl 128 15 0 1 0 0 empty empty width -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 37 280 EM_width~ 0.8;
+#X text 263 223 <-inlet3 & argument1: stereo width (signal \, 0-1)
+;
+#X floatatom 125 251 5 0 0 0 - - -;
+#X obj 82 186 *~ 0.5;
+#X obj 37 130 *~ 0.5;
+#X text 37 12 EM_width~ is a stereo width reducer using equal power
+panning. The width value of 1 preserves the stereo width of incoming
+audio signals while the value of 0 sums the signals into a mono signal.
+;
+#X connect 0 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 1;
+#X connect 5 0 0 1;
+#X connect 6 0 1 1;
+#X connect 8 0 17 0;
+#X connect 9 0 16 0;
+#X connect 12 0 15 0;
+#X connect 13 0 0 0;
+#X connect 13 1 6 0;
+#X connect 15 0 13 2;
+#X connect 16 0 13 1;
+#X connect 17 0 13 0;

@@ -1,0 +1,36 @@
+#N canvas -11 -11 1920 970 12;
+#X obj 44 256 expr~ if($v1>1 \, 2-$v1 \, if($v1 < -1 \, -2-$v1 \, $v1))
+;
+#X obj 44 289 expr~ if($v1>1 \, 2-$v1 \, if($v1 < -1 \, -2-$v1 \, $v1))
+;
+#X obj 44 318 expr~ if($v1>1 \, 2-$v1 \, if($v1 < -1 \, -2-$v1 \, $v1))
+;
+#X obj 44 347 expr~ if($v1>1 \, 2-$v1 \, if($v1 < -1 \, -2-$v1 \, $v1))
+;
+#X obj 44 16 inlet~;
+#X obj 44 406 outlet~;
+#X obj 44 226 *~;
+#X obj 62 106 inlet~;
+#X obj 62 48 loadbang;
+#X obj 62 77 f \$1;
+#X obj 62 135 lop~ 100;
+#X text 31 453 Eito Murakami - EM_fold~ (05/22/21);
+#X text 28 476 (A simple wavefolder using expr~);
+#X text 99 77 <-argument1;
+#X text 114 106 <-depth (gain multiplier);
+#X obj 62 194 expr~ $v1*7+1;
+#X obj 62 164 clip~ 0 1;
+#X obj 44 376 clip~ -1 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 17 0;
+#X connect 4 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 10 0 16 0;
+#X connect 15 0 6 1;
+#X connect 16 0 15 0;
+#X connect 17 0 5 0;

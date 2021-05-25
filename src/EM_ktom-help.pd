@@ -1,0 +1,38 @@
+#N canvas 47 166 490 577 12;
+#X obj 44 112 EM_ktom;
+#X text 149 113 <-activate/deactivate;
+#X floatatom 44 282 5 0 0 0 - - -;
+#X floatatom 90 262 5 0 0 0 - - -;
+#X floatatom 137 242 5 0 0 0 - - -;
+#X text 177 241 <-outlet3: gate (float \, 0 or 1);
+#X text 175 263 <-outlet2: frequency (float);
+#X text 174 283 <-outlet1: MIDI note number (float);
+#X obj 90 338 osc~;
+#X obj 90 384 *~;
+#X obj 137 365 lop~ 100;
+#X obj 90 471 *~;
+#X obj 90 500 dac~;
+#X obj 111 423 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 108 443 lop~ 100;
+#X msg 391 497 \; pd dsp 1;
+#X obj 391 464 loadbang;
+#X text 23 534 Eito Murakami - EM_ktom (05/19/21);
+#X text 36 14 EM_ktom is a computer keyboard to MIDI converter with
+a gate control. Use the X and Z keys to move up and down an octave.
+The keys are mapped to MIDI notes as follows: A-C \, S-D \, E-D# \,
+D-E \, F-F \, T-F# \, G-G \, Y-G# \, H-A \, U-A# \, J-B \, K-C(an octave
+higher).;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 0 2 4 0;
+#X connect 3 0 8 0;
+#X connect 4 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 1;
+#X connect 11 0 12 0;
+#X connect 11 0 12 1;
+#X connect 13 0 14 0;
+#X connect 14 0 11 1;
+#X connect 16 0 15 0;
