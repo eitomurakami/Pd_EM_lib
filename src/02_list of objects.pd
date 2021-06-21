@@ -22,4 +22,5 @@
 #X text 34 24 List of Objects for EM library (WIP);
 #X obj 34 360 EM_drywet~;
 #X obj 486 162 EM_sampler;
+#X obj 196 224 EM_div;
 #X connect 18 0 15 0;
