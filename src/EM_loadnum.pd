@@ -1,4 +1,4 @@
-#N canvas 209 365 787 415 12;
+#N canvas -11 -11 1920 970 12;
 #X obj 39 80 f \$1;
 #X obj 39 22 loadbang;
 #X obj 39 109 outlet;
