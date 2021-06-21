@@ -24,4 +24,5 @@
 #X obj 486 162 EM_sampler;
 #X obj 196 224 EM_div;
 #X obj 34 394 EM_adsr~;
+#X obj 196 258 EM_makegate;
 #X connect 18 0 15 0;
