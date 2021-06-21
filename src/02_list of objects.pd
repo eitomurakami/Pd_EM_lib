@@ -6,7 +6,6 @@
 #X obj 34 224 EM_width~;
 #X text 33 99 Audio Objects;
 #X text 194 99 Utility Objects;
-#X text 34 24 List of Objects for EM library [rough idea...WIP];
 #X text 373 99 GUI Objects;
 #X obj 366 122 EM_ktom;
 #X obj 366 257 EM_stom;
@@ -19,4 +18,6 @@
 #X obj 34 258 EM_fold~;
 #X text 34 50 Open help files to learn more about each object.;
 #X obj 536 31 loadbang;
-#X connect 19 0 16 0;
+#X obj 196 190 EM_loadnum;
+#X text 34 24 List of Objects for EM library (WIP);
+#X connect 18 0 15 0;

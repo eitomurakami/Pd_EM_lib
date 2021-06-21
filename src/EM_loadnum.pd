@@ -1,0 +1,13 @@
+#N canvas 209 365 787 415 12;
+#X obj 39 80 f \$1;
+#X obj 39 22 loadbang;
+#X obj 39 109 outlet;
+#X obj 119 22 inlet;
+#X obj 119 51 b;
+#X text 35 143 Eito Murakami - EM_loadnum;
+#X text 79 80 <-argument1: number to be sent (float);
+#X text 33 165 (send a float on load);
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;

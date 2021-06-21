@@ -1,0 +1,13 @@
+#N canvas 197 350 520 271 12;
+#X floatatom 39 145 5 0 0 0 - - -;
+#X obj 39 116 EM_loadnum 5;
+#X obj 39 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 62 87 <-inlet1: bang;
+#X text 131 115 <-argument1: number to be sent (float);
+#X text 40 180 Eito Murakami - EM_loadnum (06/21/21);
+#X text 36 20 EM_loadnum sends a float number specified by the creation
+argument when a patch is loaded. Sending a bang to the inlet ouputs
+the value.;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
