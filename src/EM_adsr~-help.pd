@@ -1,0 +1,51 @@
+#N canvas 432 259 704 579 12;
+#X obj 54 83 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 36 359 osc~ 220;
+#X obj 36 388 *~;
+#X text 76 80 <-inlet1: gate (int \, 0 or 1);
+#X obj 98 108 hsl 128 15 1 500 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 95 133 5 0 0 0 - - -;
+#X text 233 105 <-inlet2 & argument1: attack time (float \, 0-);
+#X obj 139 161 hsl 128 15 1 500 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 136 186 5 0 0 0 - - -;
+#X text 275 158 <-inlet3 & argument2: decay time (float \, 0-);
+#X obj 180 215 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 177 240 5 0 0 0 - - -;
+#X text 316 212 <-inlet4 & argument3: sustain level (float \, 0-1)
+;
+#X obj 222 268 hsl 128 15 1 500 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 219 293 5 0 0 0 - - -;
+#X text 358 265 <-inlet5 & argument4: release time (float \, 0-);
+#X text 32 20 EM_adsr~ is a 4-stage exponential envelope generator.
+The output signal ranges from 0-1.;
+#X text 32 537 Eito Murakami - EM_adsr~ (06/21/21);
+#X obj 37 474 *~;
+#X obj 37 503 dac~;
+#X obj 58 426 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 4600 1;
+#X obj 55 446 lop~ 100;
+#X msg 498 517 \; pd dsp 1;
+#X obj 498 484 loadbang;
+#X obj 54 320 EM_adsr~ 150 100 0.5 500;
+#X connect 0 0 24 0;
+#X connect 1 0 2 0;
+#X connect 2 0 18 0;
+#X connect 4 0 5 0;
+#X connect 5 0 24 1;
+#X connect 7 0 8 0;
+#X connect 8 0 24 2;
+#X connect 10 0 11 0;
+#X connect 11 0 24 3;
+#X connect 13 0 14 0;
+#X connect 14 0 24 4;
+#X connect 18 0 19 0;
+#X connect 18 0 19 1;
+#X connect 20 0 21 0;
+#X connect 21 0 18 1;
+#X connect 23 0 22 0;
+#X connect 24 0 2 1;
