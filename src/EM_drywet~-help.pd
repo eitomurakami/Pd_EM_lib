@@ -1,0 +1,42 @@
+#N canvas 333 170 539 492 12;
+#X obj 40 376 *~;
+#X obj 61 411 dac~;
+#X msg 451 416 \; pd dsp 1;
+#X obj 451 383 loadbang;
+#X obj 175 311 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 172 331 lop~ 100;
+#X obj 107 376 *~;
+#X obj 110 202 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 107 227 5 0 0 0 - - -;
+#X obj 40 86 osc~ 110;
+#X obj 56 115 osc~ 220;
+#X obj 40 283 EM_drywet~;
+#X text 41 449 Eito Murakami - EM_drywet~ (06/20/21);
+#X text 126 114 <-inlet2: channel1 audio right in;
+#X text 107 86 <-inlet1: channel1 audio left in;
+#X text 246 199 <-inlet5: balance (signal \, 0-1);
+#X obj 107 255 sig~;
+#X obj 74 144 phasor~ 110;
+#X obj 90 173 phasor~ 220;
+#X text 162 145 <-inlet3: channel2 audio left in;
+#X text 176 173 <-inlet4: channel2 audio right in;
+#X text 37 12 EM_drywet~ is a 2-channel stereo crossfader with linear
+gain. The balance of 0 only outputs channel1 and the balance of 1 only
+outputs channel2.;
+#X connect 0 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 1;
+#X connect 5 0 0 1;
+#X connect 6 0 1 1;
+#X connect 7 0 8 0;
+#X connect 8 0 16 0;
+#X connect 9 0 11 0;
+#X connect 10 0 11 1;
+#X connect 11 0 0 0;
+#X connect 11 1 6 0;
+#X connect 16 0 11 4;
+#X connect 17 0 11 2;
+#X connect 18 0 11 3;

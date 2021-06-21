@@ -1,0 +1,55 @@
+#N canvas 134 134 693 774 12;
+#X obj 37 628 *~;
+#X obj 158 663 dac~;
+#X msg 538 658 \; pd dsp 1;
+#X obj 538 625 loadbang;
+#X obj 324 563 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 321 583 lop~ 100;
+#X obj 256 628 *~;
+#X obj 221 360 hsl 128 15 -100 100 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 258 413 hsl 128 15 500 10000 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 37 465 EM_sampler;
+#X text 141 254 <-inlet2: audio right in;
+#X text 28 691 Eito Murakami - EM_sampler (06/20/21);
+#X obj 109 284 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 132 282 <-inlet3: play (bang);
+#X obj 146 309 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 182 334 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 218 385 5 0 0 0 - - -;
+#X floatatom 255 438 5 0 0 0 - - -;
+#X text 105 225 <-inlet1: audio left in;
+#X text 168 307 <-inlet4: stop (bang);
+#X text 201 332 <-inlet5: record (bang);
+#X text 395 407 <-inlet7: record length in ms (float);
+#X text 357 357 <-inlet6: playback speed percentage (float);
+#X obj 37 226 osc~ 110;
+#X obj 73 255 osc~ 220;
+#X text 37 12 EM_sampler is a single buffer stereo sampler with variable
+playback speed. \; - p: play \; - s: stop \; - o: open a sound file
+\; - r: record \; - l: loop \; - rl: record loop (trigger "play" once
+a recording ends) \; - win: apply a 500-sample fade at the beginning
+and end of a loop \; - speed: playback speed percentage (negative value
+reverses the direction) \; - rec_length: record length in ms \;;
+#X connect 0 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 1;
+#X connect 5 0 0 1;
+#X connect 6 0 1 1;
+#X connect 7 0 16 0;
+#X connect 8 0 17 0;
+#X connect 9 0 0 0;
+#X connect 9 1 6 0;
+#X connect 12 0 9 2;
+#X connect 14 0 9 3;
+#X connect 15 0 9 4;
+#X connect 16 0 9 5;
+#X connect 17 0 9 6;
+#X connect 23 0 9 0;
+#X connect 24 0 9 1;
