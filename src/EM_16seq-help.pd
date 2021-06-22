@@ -1,0 +1,77 @@
+#N canvas 139 29 714 886 12;
+#X obj 46 500 EM_16seq 16;
+#X obj 46 651 osc~;
+#X obj 46 539 t f b;
+#X obj 98 568 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 46 596 mtof;
+#X obj 46 680 *~;
+#X floatatom 46 568 5 0 0 0 - - -;
+#X obj 141 118 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 170 141 sel 1;
+#X msg 106 390 100 100 100 100 100 100 100 100 100 100 100 100 100
+100 100 100;
+#X msg 75 322 60 62 63 65 67 68 70 72 74 75 77 79 80 82 84 72;
+#X obj 98 593 EM_makegate 100;
+#X obj 105 446 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 127 446 <-inlet5: reset (bang);
+#X obj 63 211 hsl 128 15 1 16 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 60 236 i;
+#X floatatom 60 265 5 0 0 0 - - -;
+#X text 199 208 <-inlet2 & argument1: step length (int \, 1-16);
+#X msg 90 361 80 50 80 50 80 50 50 80 50 80 50 80 50 50 80 80;
+#X obj 98 621 EM_adsr~ 10 0 0.8 300;
+#X obj 46 162 EM_clock 128 8;
+#X obj 75 293 loadbang;
+#X floatatom 120 474 5 0 0 0 - - -;
+#X text 162 473 <-inlet6: trigger a specific step/index (int \, 1-16)
+;
+#X text 34 21 EM_16seq is a 16-step conditional sequencer. Numbers
+in the list sent to the 3rd inlet are triggered sequentially based
+on the probability percentage at the corresponding index of the list
+sent to the 4th inlet. A specific step/index can be triggered by sending
+an integer to the 6th inlet.;
+#X text 161 115 <-start clock;
+#X text 416 320 <-inlet3: numbers list (float list);
+#X text 436 361 <-inlet4: probability list (int list);
+#X obj 47 774 *~;
+#X obj 47 803 dac~;
+#X obj 68 726 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 5400 1;
+#X obj 65 746 lop~ 100;
+#X msg 478 807 \; pd dsp 1;
+#X obj 478 774 loadbang;
+#X text 42 837 Eito Murakami - EM_16seq (06/22/21);
+#X text 262 605 <-create an envelope;
+#X connect 0 0 2 0;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 2 1 3 0;
+#X connect 3 0 11 0;
+#X connect 4 0 1 0;
+#X connect 5 0 28 0;
+#X connect 6 0 4 0;
+#X connect 7 0 8 0;
+#X connect 7 0 20 2;
+#X connect 8 0 12 0;
+#X connect 9 0 0 3;
+#X connect 10 0 0 2;
+#X connect 11 0 19 0;
+#X connect 12 0 0 4;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 0 1;
+#X connect 18 0 0 3;
+#X connect 19 0 5 1;
+#X connect 20 0 0 0;
+#X connect 21 0 10 0;
+#X connect 21 0 18 0;
+#X connect 22 0 0 5;
+#X connect 28 0 29 0;
+#X connect 28 0 29 1;
+#X connect 30 0 31 0;
+#X connect 31 0 28 1;
+#X connect 33 0 32 0;
