@@ -27,4 +27,7 @@
 #X obj 196 258 EM_makegate;
 #X obj 196 292 EM_16seq;
 #X obj 34 428 EM_balance~;
+#X obj 796 166 EM_granular_voice;
+#X obj 796 132 EM_randlist;
+#X text 796 106 Auxiliary Abstractions;
 #X connect 18 0 15 0;
