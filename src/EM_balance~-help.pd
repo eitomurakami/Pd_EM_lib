@@ -1,0 +1,42 @@
+#N canvas -11 -11 1920 970 12;
+#X obj 37 398 *~;
+#X obj 68 433 dac~;
+#X msg 528 388 \; pd dsp 1;
+#X obj 528 355 loadbang;
+#X obj 193 333 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 190 353 lop~ 100;
+#X obj 125 398 *~;
+#X text 129 95 <-inlet1: audio left in;
+#X obj 142 219 hsl 128 15 0 1 0 0 empty empty balance -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 139 244 5 0 0 0 - - -;
+#X obj 88 180 *~ 0.5;
+#X obj 37 124 *~ 0.5;
+#X obj 37 300 EM_balance~ 0.5;
+#X obj 37 95 phasor~ 110;
+#X obj 88 151 phasor~ 220;
+#X obj 139 272 sig~;
+#X text 22 468 Eito Murakami - EM_balance~ (06/28/21);
+#X text 179 152 <-inlet2: audio right in;
+#X text 277 216 <-inlet3 & argument1: stereo balance (signal \, 0-1)
+;
+#X text 37 12 EM_balance~ is a stereo balance controller using linear
+gain. The amplitude of the first and second signal only begins to drop
+when the balance value is greater than or less than 0.5 \, respectively.
+;
+#X connect 0 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 1;
+#X connect 5 0 0 1;
+#X connect 6 0 1 1;
+#X connect 8 0 9 0;
+#X connect 9 0 15 0;
+#X connect 10 0 12 1;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X connect 12 1 6 0;
+#X connect 13 0 11 0;
+#X connect 14 0 10 0;
+#X connect 15 0 12 2;
