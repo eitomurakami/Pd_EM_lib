@@ -1,8 +1,8 @@
-#N canvas 103 272 494 355 12;
+#N canvas 103 272 505 361 12;
 #X obj 37 241 *~;
 #X obj 37 270 dac~;
 #X obj 58 193 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
--1 -1 6500 1;
+-1 -1 0 1;
 #X obj 55 213 lop~ 100;
 #X msg 368 297 \; pd dsp 1;
 #X obj 368 264 loadbang;

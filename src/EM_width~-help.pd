@@ -11,7 +11,6 @@
 #X obj 37 106 noise~;
 #X obj 81 160 noise~;
 #X text 89 106 <-inlet1: audio left in;
-#X text 132 161 <-inlet1: audio right in;
 #X obj 128 226 hsl 128 15 0 1 0 0 empty empty width -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 37 280 EM_width~ 0.8;
@@ -24,17 +23,18 @@
 panning. The width value of 1 preserves the stereo width of incoming
 audio signals while the value of 0 sums the signals into a mono signal.
 ;
+#X text 132 161 <-inlet2: audio right in;
 #X connect 0 0 1 0;
 #X connect 3 0 2 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 1;
 #X connect 5 0 0 1;
 #X connect 6 0 1 1;
-#X connect 8 0 17 0;
-#X connect 9 0 16 0;
-#X connect 12 0 15 0;
-#X connect 13 0 0 0;
-#X connect 13 1 6 0;
-#X connect 15 0 13 2;
-#X connect 16 0 13 1;
-#X connect 17 0 13 0;
+#X connect 8 0 16 0;
+#X connect 9 0 15 0;
+#X connect 11 0 14 0;
+#X connect 12 0 0 0;
+#X connect 12 1 6 0;
+#X connect 14 0 12 2;
+#X connect 15 0 12 1;
+#X connect 16 0 12 0;
