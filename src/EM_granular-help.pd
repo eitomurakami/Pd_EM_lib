@@ -1,0 +1,89 @@
+#N canvas 99 12 1128 946 12;
+#X obj 37 608 EM_granular;
+#X text 34 890 Eito Murakami - EM_granular (06/28/21);
+#X obj 37 26 EM_sampler;
+#X obj 37 116 *~ 1;
+#X obj 64 145 *~ 1;
+#X text 75 116 <-inlet1: audio left in;
+#X text 100 143 <-inlet2: audio right in;
+#X obj 91 174 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 115 171 <-inlet3: record (bang);
+#X obj 37 821 *~;
+#X obj 158 856 dac~;
+#X msg 538 851 \; pd dsp 1;
+#X obj 538 818 loadbang;
+#X obj 325 751 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 322 776 lop~ 100;
+#X obj 280 821 *~;
+#X obj 118 199 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 138 197 <-inlet4: freeze (int \, 0 or 1);
+#X text 273 55 <-open a sound file and play it as a sound source;
+#X obj 148 224 hsl 128 15 -200 200 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X floatatom 145 244 5 0 0 0 - - -;
+#X text 281 221 <-inlet5: playback speed percentage (float);
+#X obj 175 272 hsl 128 15 10 9999 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X floatatom 172 292 5 0 0 0 - - -;
+#X obj 202 320 hsl 128 15 1 10 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 199 365 5 0 0 0 - - -;
+#X obj 199 340 i;
+#X text 339 317 <-inlet7: density (int \, 1-10);
+#X obj 229 393 hsl 128 15 0 10 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 226 437 5 0 0 0 - - -;
+#X obj 226 413 i;
+#X obj 256 465 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 253 509 5 0 0 0 - - -;
+#X obj 253 485 i;
+#X obj 283 537 hsl 128 15 0 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 280 581 5 0 0 0 - - -;
+#X obj 280 557 i;
+#X text 393 462 <-inlet9: pan depth (int \, 0-100);
+#X text 420 534 <-inlet10: dry/wet (int \, 0-100);
+#X text 681 40 EM_granular is a 10-voice looper/granular synthesizer.
+There are two internal recording buffers \, which allow incoming signals
+to be recorded into a buffer while playing back the other buffer. The
+density of 1 acts like a traditional looper while the higher density
+results in granular effects. Density_Random determines how often the
+voice allocation is randomized. The Density_Random of 0 randomizes
+the voice allocation every 10 loops while the Density_Random of 10
+randomizes it every loop.;
+#X text 366 390 <-inlet8: density random (int \, 0-10);
+#X text 312 271 <-inlet6: record length in ms (float \, 10-9999);
+#X connect 0 0 9 0;
+#X connect 0 1 15 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 1;
+#X connect 7 0 0 2;
+#X connect 9 0 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 1;
+#X connect 14 0 9 1;
+#X connect 15 0 10 1;
+#X connect 16 0 0 3;
+#X connect 19 0 20 0;
+#X connect 20 0 0 4;
+#X connect 22 0 23 0;
+#X connect 23 0 0 5;
+#X connect 24 0 26 0;
+#X connect 25 0 0 6;
+#X connect 26 0 25 0;
+#X connect 28 0 30 0;
+#X connect 29 0 0 7;
+#X connect 30 0 29 0;
+#X connect 31 0 33 0;
+#X connect 32 0 0 8;
+#X connect 33 0 32 0;
+#X connect 34 0 36 0;
+#X connect 35 0 0 9;
+#X connect 36 0 35 0;
