@@ -1,4 +1,4 @@
-#N canvas -11 -11 1920 970 12;
+#N canvas 64 285 647 505 12;
 #X obj 37 398 *~;
 #X obj 68 433 dac~;
 #X msg 528 388 \; pd dsp 1;
