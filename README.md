@@ -4,4 +4,4 @@
 
 Eito Murakami, May 2021<br>
 
-![sample_img](img/list_of_objects.PNG)
+![sample_img](img/list_of_objects2.PNG)
