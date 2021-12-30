@@ -1,0 +1,17 @@
+#N canvas 35 241 460 317 12;
+#X obj 36 62 loadbang;
+#X text 25 17 EM_mtos is a MIDI to note name converter.;
+#X msg 36 91 60;
+#X obj 36 162 EM_mtos;
+#X symbolatom 36 203 10 0 0 0 - - -;
+#X text 10 267 Eito Murakami - EM_mtos (12/29/21);
+#X text 117 131 <-inlet2: frequency (float);
+#X text 117 205 <-note name (symbol);
+#X msg 76 91 39;
+#X msg 82 131 440;
+#X text 118 90 <-inlet1: MIDI note (float);
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 1;
