@@ -30,4 +30,5 @@
 #X text 766 106 Auxiliary Abstractions;
 #X obj 476 212 EM_granular;
 #X obj 196 359 EM_mtos;
+#X obj 766 200 EM_trianglevoice;
 #X connect 16 0 13 0;

@@ -1,0 +1,56 @@
+#N canvas 148 156 874 663 12;
+#X obj 47 178 hsl 128 15 1 20000 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 44 203 6 0 0 0 - - -;
+#X obj 161 281 hsl 128 15 1 20000 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X floatatom 158 306 5 0 0 0 - - -;
+#X obj 275 388 hsl 128 15 1 50 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 272 413 5 0 0 0 - - -;
+#X obj 44 564 *~;
+#X obj 44 593 dac~;
+#X obj 65 516 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 62 536 lop~ 100;
+#X msg 488 607 \; pd dsp 1;
+#X obj 488 574 loadbang;
+#X text 22 627 Eito Murakami - EM_trianglevoice (12/08/21);
+#X text 32 20 EM_trianglevoice is an abstraction for the Pd clone object
+to generate a triangle wave. Each instance of the abstraction inside
+the clone object acts as a harmonic component \, and calculates its
+relative amplitude based on the Gaussian function as a band-pass filter.
+;
+#X text 182 175 <-inlet1: fundamental frequency (signal \, 0-20 \,
+000);
+#X obj 44 450 clone EM_trianglevoice 50 1000 10;
+#X text 411 385 <-inlet3 & argument2: band-pass filter width (signal
+\, 1-50);
+#X text 297 278 <-inlet2 & argument1: band-pass filter center frequency
+(signal \, 0-20 \, 000);
+#X obj 44 231 lop~ 100;
+#X obj 44 120 loadbang;
+#X msg 44 149 1000;
+#X obj 158 223 loadbang;
+#X msg 158 252 1000;
+#X obj 272 330 loadbang;
+#X msg 272 359 10;
+#X connect 0 0 1 0;
+#X connect 1 0 18 0;
+#X connect 2 0 3 0;
+#X connect 3 0 15 1;
+#X connect 4 0 5 0;
+#X connect 5 0 15 2;
+#X connect 6 0 7 0;
+#X connect 6 0 7 1;
+#X connect 8 0 9 0;
+#X connect 9 0 6 1;
+#X connect 11 0 10 0;
+#X connect 15 0 6 0;
+#X connect 18 0 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 0 0;
+#X connect 21 0 22 0;
+#X connect 22 0 2 0;
+#X connect 23 0 24 0;
+#X connect 24 0 4 0;
