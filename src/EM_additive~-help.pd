@@ -1,0 +1,67 @@
+#N canvas 52 146 1127 537 12;
+#X obj 47 424 *~;
+#X obj 47 453 dac~;
+#X obj 68 376 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 65 396 lop~ 100;
+#X msg 498 477 \; pd dsp 1;
+#X obj 498 444 loadbang;
+#X text 42 487 Eito Murakami - EM_additive~ (12/08/21);
+#X obj 47 320 EM_additive~;
+#X obj 60 73 hsl 128 15 1 50 1 0 empty empty comp_num -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 107 231 hsl 128 15 0 1 0 0 empty empty comp_deviation -2 -8
+0 10 -262144 -1 -1 0 1;
+#X obj 116 265 hradio 15 1 0 3 empty empty comp_behavior 0 -8 0 10
+-262144 -1 -1 0;
+#X obj 128 295 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
+-1 -1;
+#X obj 96 188 hsl 128 15 0 5 0 0 empty empty comp_exponent -2 -8 0
+10 -262144 -1 -1 0 1;
+#X obj 73 108 hsl 128 15 0 1 0 0 empty empty even_amp -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 84 148 hsl 128 15 0 1 0 0 empty empty odd_amp -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 182 292 <-inlet8: reset (bang);
+#X floatatom 45 29 5 0 20000 2 - - -;
+#X text 85 29 <-inlet1: frequency (signal \, 0-20000);
+#X text 193 70 <-inlet2: number of harmonics (signal \, 1-50 \, default:50)
+;
+#X text 206 104 <-inlet3: even harmonics amplitude (signal \, 0-1 \,
+default:1);
+#X text 216 145 <-inlet4: odd harmonics amplitude (signal \, 0-1 \,
+default:1);
+#X text 228 186 <-inlet5: component exponent (signal \, 0-5 \, default:1)
+;
+#X text 239 229 <-inlet6: component frequency deviation (signal \,
+0-1 \, default:0);
+#X text 182 264 <-inlet7: component behavior (int \, 0-2 \, default:0)
+;
+#X text 655 22 EM_additive~ is an additive synthesizer abstraction
+with the following inlets \; 1 The fundamental frequency (0-20000 Hz)
+\; 2 The number of harmonics (1-50) \, which can be dynamically modulated
+by an external LFO. The signal is anti-aliased by removing harmonics
+above the Nyquist limit. \; 3 The relative amplitude of even harmonics
+\; 4 The relative amplitude of odd harmonics \; 5 The “component
+exponent” parameter where the relative amplitude of each harmonic
+is defined as 1/pow(harmonic number \, comp_exponent) \; 6 The “deviation”
+parameter \, which applies a random frequency offset to each harmonic
+\; 7 The behavior of parameter2 (the number of harmonics) \; - 0: low-pass
+filter style \; - 1: high-pass filter style \; - 2: random - randomly
+picks priorities for harmonics. The harmonic allocation can be updated
+by sending a bang to inlet 8 \; 8 The reset bang for the harmonic allocation
+and frequency offset \;;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;
+#X connect 2 0 3 0;
+#X connect 3 0 0 1;
+#X connect 5 0 4 0;
+#X connect 7 0 0 0;
+#X connect 8 0 7 1;
+#X connect 9 0 7 5;
+#X connect 10 0 7 6;
+#X connect 11 0 7 7;
+#X connect 12 0 7 4;
+#X connect 13 0 7 2;
+#X connect 14 0 7 3;
+#X connect 16 0 7 0;

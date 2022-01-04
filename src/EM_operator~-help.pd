@@ -1,22 +1,20 @@
-#N canvas 81 75 910 733 12;
+#N canvas -11 -11 1920 971 12;
 #X obj 288 228 hsl 128 15 1 10 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2822 1;
+-1 -1 9200 1;
 #X floatatom 285 283 5 0 0 0 - - -;
-#X obj 343 338 hsl 128 15 1 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 513 1;
-#X floatatom 340 363 5 0 0 0 - - -;
+#X floatatom 340 363 5 0 100 0 - - -;
 #X obj 231 624 *~;
 #X obj 231 653 dac~;
 #X obj 252 576 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 8400 1;
 #X obj 249 596 lop~ 100;
 #X msg 558 627 \; pd dsp 1;
 #X obj 558 594 loadbang;
 #X text 423 225 <-inlet2 & argument1: ratio (signal \, 0-10);
-#X text 479 335 <-inlet3 & argument2: modulation index (signal \, 1-100)
+#X text 385 364 <-inlet3 & argument2: modulation index (signal \, 1-100)
 ;
 #X obj 285 253 i;
-#X obj 340 280 loadbang;
+#X obj 340 305 loadbang;
 #X obj 340 391 sig~;
 #X obj 285 311 sig~;
 #X obj 285 170 loadbang;
@@ -29,7 +27,7 @@
 #X text 107 308 <-global frequency;
 #X obj 32 221 loadbang;
 #X obj 231 430 EM_operator~ 3 5;
-#X msg 340 309 5;
+#X msg 340 334 5;
 #X msg 32 250 220;
 #X obj 431 430 EM_operator~ 0.5 10;
 #X obj 431 479 EM_operator~ 1 1;
@@ -43,27 +41,26 @@ of a carrier. The left outlet is used for the output audio signal.
 The frequency of each operator is determined by the "ratio" multiplier
 as well as the global frequency \, which has to be specified by sending
 a float to the send object named "fm_freq".;
-#X connect 0 0 12 0;
-#X connect 1 0 15 0;
-#X connect 2 0 3 0;
-#X connect 3 0 14 0;
-#X connect 4 0 5 0;
-#X connect 4 0 5 1;
-#X connect 6 0 7 0;
-#X connect 7 0 4 1;
-#X connect 9 0 8 0;
-#X connect 12 0 1 0;
-#X connect 13 0 26 0;
-#X connect 14 0 25 2;
-#X connect 15 0 25 1;
-#X connect 16 0 17 0;
-#X connect 17 0 0 0;
-#X connect 19 0 20 0;
-#X connect 20 0 4 0;
-#X connect 21 0 22 0;
-#X connect 24 0 27 0;
-#X connect 25 1 19 0;
-#X connect 26 0 2 0;
-#X connect 27 0 21 0;
-#X connect 28 1 29 0;
-#X connect 29 0 20 1;
+#X connect 0 0 11 0;
+#X connect 1 0 14 0;
+#X connect 2 0 13 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 5 0 6 0;
+#X connect 6 0 3 1;
+#X connect 8 0 7 0;
+#X connect 11 0 1 0;
+#X connect 12 0 25 0;
+#X connect 13 0 24 2;
+#X connect 14 0 24 1;
+#X connect 15 0 16 0;
+#X connect 16 0 0 0;
+#X connect 18 0 19 0;
+#X connect 19 0 3 0;
+#X connect 20 0 21 0;
+#X connect 23 0 26 0;
+#X connect 24 1 18 0;
+#X connect 25 0 2 0;
+#X connect 26 0 20 0;
+#X connect 27 1 28 0;
+#X connect 28 0 19 1;

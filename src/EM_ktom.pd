@@ -69,6 +69,7 @@
 #X obj 103 706 b;
 #X obj 131 360 b;
 #X text 61 902 Eito Murakami - EM_ktom (05/19/21);
+#X text 57 928 (Computer keyboard to MIDI converter);
 #X connect 0 0 15 0;
 #X connect 1 0 15 0;
 #X connect 2 0 15 0;

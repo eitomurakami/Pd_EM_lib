@@ -29,7 +29,8 @@
 #X text 133 9 freq;
 #X obj 114 460 outlet;
 #X obj 133 88 expr round($f1);
-#X text 22 490 Eito Murakami - MIDI to Symbol (07/23/21);
+#X text 22 520 (MIDI to Symbol converter);
+#X text 22 490 Eito Murakami - EM_mtos (07/23/21);
 #X connect 0 0 16 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
