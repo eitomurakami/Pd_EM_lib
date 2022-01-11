@@ -1,12 +1,12 @@
-#N canvas -11 -11 1920 971 12;
+#N canvas 107 99 826 732 12;
 #X obj 288 228 hsl 128 15 1 10 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9200 1;
+-1 -1 2822 1;
 #X floatatom 285 283 5 0 0 0 - - -;
 #X floatatom 340 363 5 0 100 0 - - -;
 #X obj 231 624 *~;
 #X obj 231 653 dac~;
 #X obj 252 576 hsl 128 15 0 1 0 0 empty empty volume -2 -8 0 10 -262144
--1 -1 8400 1;
+-1 -1 0 1;
 #X obj 249 596 lop~ 100;
 #X msg 558 627 \; pd dsp 1;
 #X obj 558 594 loadbang;

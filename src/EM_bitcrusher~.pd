@@ -14,7 +14,7 @@
 #X obj 345 108 lop~ 100;
 #X text 31 318 Eito Murakami - EM_bitcrusher~ (05/16/21);
 #X text 366 176 <-avoiding "expr~ divide by zero detected";
-#X text 30 343 (A bitcrusher using quantization);
+#X text 30 343 (Bitcrusher using quantization);
 #X connect 0 0 6 0;
 #X connect 1 0 7 0;
 #X connect 3 0 12 0;
